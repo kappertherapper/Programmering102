@@ -21,26 +21,13 @@ public class Test {
         vehicles.add(volvewagen);
         vehicles.add(mercedes);
 
-        toyota.start();
-        toyota.stop();
-        System.out.println();
-        toyota.performAction();
+        for (Vehicle vehicle : vehicles) {
+            vehicle.start();
+            vehicle.stop();
+            vehicle.performAction();
+            System.out.println();
+            System.out.println();
 
-        System.out.println();
-        System.out.println();
-
-        hally.start();
-        hally.stop();
-        System.out.println();
-        hally.performAction();
-
-        System.out.println();
-        System.out.println();
-
-        volvewagen.start();
-        volvewagen.stop();
-        System.out.println();
-        volvewagen.performAction();
-
+        }
     }
 }

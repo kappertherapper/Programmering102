@@ -14,7 +14,7 @@ public class Vehicle {
     }
 
     public void displayInfo() {
-        System.out.println(make + model + year + milage);
+        System.out.println("Mate: " + this.make + ",  " + "Model: " +  this.model + ",  " + "Year: " + this.year + ",  " + "Milage: " + this.milage);
     }
 
     public void start() {

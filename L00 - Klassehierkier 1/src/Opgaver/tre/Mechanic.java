@@ -11,6 +11,6 @@ public class Mechanic extends Person {
     }
 
     public double weeklySalary() {
-        return salary * 7;
+        return salary * 37;
     }
 }
