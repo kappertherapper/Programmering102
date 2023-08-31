@@ -23,9 +23,7 @@ public class Test {
         System.out.println();
 
         for (Figure figure : figures) {
-            int move = 50;
-            figure.y += move;
-            figure.x += move;
+            figure.setParalel(50, 50);
         }
 
         System.out.println();
