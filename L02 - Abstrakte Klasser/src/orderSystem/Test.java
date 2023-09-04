@@ -52,5 +52,6 @@ public class Test {
         regular.addOrder(to);
         FixedDiscount fixed = new FixedDiscount(250, 1000);
         System.out.println("Price after discount = " + fixed.getDiscount(to.orderPrice()));
+        System.out.println("hej");
     }
 }

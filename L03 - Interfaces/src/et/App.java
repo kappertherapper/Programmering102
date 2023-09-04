@@ -2,7 +2,8 @@ package et;
 
 public class App {
     public static void main(String[] args) {
-
+        Beer tuborg = new Beer();
+        tuborg.AlcoholProcent = 4;
     }
 
     /**
