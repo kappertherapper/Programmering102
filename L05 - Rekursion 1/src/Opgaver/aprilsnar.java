@@ -7,7 +7,7 @@ public class aprilsnar {
     }
     public static String reverse(String s) {
         // Base case: If the string is empty, return an empty string.
-        if (s.length() == 0) {
+        if (s.isEmpty()) {
             return "";
             // Recursive step: Take the last character of the string and append it to the reversed rest of the string.
         } else {
