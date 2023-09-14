@@ -12,6 +12,7 @@ public class Palindrome {
         if (s.length() <= 1) {
             return true;
         }
+
         char first = s.charAt(0);
         char last = s.charAt(s.length() - 1);
 
