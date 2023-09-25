@@ -12,6 +12,18 @@ public class Vare {
         this.description = description;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getVAT() {
+        return priceWithVAT()-price;
+    }
+
     public double priceWithVAT() {
         return price * VAT;
     }

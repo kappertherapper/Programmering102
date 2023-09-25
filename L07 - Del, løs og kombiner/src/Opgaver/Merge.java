@@ -49,8 +49,7 @@ public class Merge {
         }
 
         for (int i = 0; i < temp.size(); i++) {
-            int ny = temp.get(i);
-            list.set(low + i, ny);
+            list.set(low + i, temp.get(i));
         }
     }
 }

@@ -8,6 +8,7 @@ public class Elartikel extends Vare{
         super(price, name, description);
         this.energyConsumption = energyConsumption;
     }
+
     public double priceWithVAT() {
         if (price > 3) {
             return price * VAT;
