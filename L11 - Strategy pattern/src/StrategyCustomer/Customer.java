@@ -5,7 +5,9 @@ import java.util.Comparator;
 public class Customer implements Comparable<Customer>{
     private String name;
     private int number;
-    private static Comparator<Customer> customerComparator;
+    private static Comparator<Customer> customerComparator = new NumberComparator(); // so i dont have to check for null
+    // static sikre at det er den samme de bruger
+
 
     public Customer(String name, int number) {
         this.name = name;
@@ -42,11 +44,7 @@ public class Customer implements Comparable<Customer>{
 
     @Override
     public int compareTo(Customer o) {
-        if (customerComparator != null) {
             return customerComparator.compare(this, o);
-        } else {
-            return 0;
-        }
     }
 }
 

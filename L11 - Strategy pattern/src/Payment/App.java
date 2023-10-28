@@ -18,5 +18,4 @@ public class App {
         cart.checkout(50);
         System.out.println("difference: " + cart.calculateResult());
     }
-
 }
