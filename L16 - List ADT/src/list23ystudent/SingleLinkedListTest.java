@@ -11,8 +11,8 @@ public class SingleLinkedListTest {
     @BeforeEach
     void setUp() {
         //list = new ArrayList23Y();
-        list = new SingleLinkedList23Y();
-        //list = new DoubleLinkedList23Y(); //TODO: tjek den her
+        //list = new SingleLinkedList23Y();
+        list = new DoubleLinkedList23Y(); //TODO: tjek den her
     }
 
     @Test

@@ -4,13 +4,13 @@ import java.util.Iterator;
 
 /** A double-linked nodes based implementation of the List ADT. */
 public class DoubleLinkedList23Y<E> implements List23Y<E> {
-    private final Node<E> header = new Node<>(null);
-    private final Node<E> trailer = new Node<>(null);
+    private final Node<E> head = new Node<>(null);
+    private final Node<E> tail = new Node<>(null);
     private int size = 0;
 
     public DoubleLinkedList23Y() {
-        header.next = trailer;
-        trailer.prev = header;
+        head.next = tail;
+        tail.prev = head;
     }
 
     /**
@@ -18,13 +18,18 @@ public class DoubleLinkedList23Y<E> implements List23Y<E> {
      */
     @Override
     public void add(E e) {
-        Node<E> newNode = new Node<>(e);
-        // insert newNode between trailer.prev and trailer
-        newNode.prev = trailer.prev;
-        newNode.next = trailer;
-        trailer.prev.next = newNode;
-        trailer.prev = newNode;
-        size++;
+        if (head == null) {
+            head.next = tail.prev = new Node<>(e);
+            head.prev = null;
+            tail.next = null;
+        } else {
+            Node<E> newNode = new Node<>(e);
+            tail.next = newNode;
+            newNode.prev = tail;
+            head.next = newNode;
+            tail.next = null;
+
+        }
     }
 
     /**
@@ -33,6 +38,31 @@ public class DoubleLinkedList23Y<E> implements List23Y<E> {
      */
     @Override
     public boolean remove(E e) {
+        if (head == null)
+            return false;
+
+
+        Node<E> node = head;
+        if (node.element.equals(e)) {
+            if (node.next != null) {
+            node.next.prev = null;
+        }
+
+        node = node.next;
+        size--;
+        return true;
+    }
+
+        while (node.next != null && !node.next.element.equals(e)) {
+            node = node.next;
+        }
+
+        if (node.next != null) {
+            node.next = node.next.next;
+            node.next.prev = node.prev;
+            size--;
+            return true;
+        }
         return false;
     }
 
@@ -41,6 +71,13 @@ public class DoubleLinkedList23Y<E> implements List23Y<E> {
      */
     @Override
     public boolean contains(E e) {
+        Node<E> node = head;
+        while (node != null) {
+            if (node.element.equals(e)) {
+                return true;
+            }
+            node = node.next;
+        }
         return false;
     }
 
@@ -49,8 +86,8 @@ public class DoubleLinkedList23Y<E> implements List23Y<E> {
      */
     @Override
     public void clear() {
-        header.next = trailer;
-        trailer.prev = header;
+        head.next = null;
+        tail.prev = null;
         size = 0;
     }
 
@@ -66,7 +103,7 @@ public class DoubleLinkedList23Y<E> implements List23Y<E> {
      */
     @Override
     public boolean isEmpty() {
-        return header.next == trailer;
+        return head.next == tail;
     }
 
     /**
@@ -75,7 +112,15 @@ public class DoubleLinkedList23Y<E> implements List23Y<E> {
      */
     @Override
     public E get(int index) {
-        return null;
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node<E> node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+
+        return node.element;
     }
 
     /**
@@ -85,7 +130,29 @@ public class DoubleLinkedList23Y<E> implements List23Y<E> {
      */
     @Override
     public void add(int index, E e) {
+        if (index < 0 || index > size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node<E> node = new Node<E>(e);
 
+        if (index == 0) {
+            node.next = head;
+            tail.prev = node;
+            size++;
+            return;
+        }
+        int count = 0;
+        Node<E> temp = head;
+
+        while (count < index && temp != null) {
+            node.prev = temp;
+            temp = temp.next;
+            count++;
+        }
+
+        node.prev.next = node;
+        node.next = temp;
+        size++;
     }
 
     /**
