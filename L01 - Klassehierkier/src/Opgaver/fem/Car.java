@@ -1,7 +1,7 @@
 package Opgaver.fem;
 
 public class Car extends Vehicle{
-    int numDoors;
+    private int numDoors;
 
     public Car(String make, String model, int year, double milage, int numDoors) {
         super(make, model, year, milage);

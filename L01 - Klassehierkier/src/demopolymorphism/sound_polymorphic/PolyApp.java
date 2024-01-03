@@ -20,36 +20,3 @@ public class PolyApp {
     }
 }
 
-class Animal {
-    public void makeSound() {
-        System.out.println("Animal: ???");
-    }
-}
-
-class Cat extends Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("Cat: Meow");
-    }
-}
-
-class Dog extends Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("Dog: woof");
-    }
-}
-
-class Donkey extends Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("Donkey: hee-haw");
-    }
-}
-
-class Snake extends Animal {
-    @Override
-    public void makeSound() {
-        System.out.println("Snake: hiss");
-    }
-}

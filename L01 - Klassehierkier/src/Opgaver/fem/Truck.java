@@ -1,7 +1,7 @@
 package Opgaver.fem;
 
 public class Truck extends Vehicle{
-    double loadCapacity;
+    private double loadCapacity;
 
     public Truck(String make, String model, int year, double milage, double loadCapacity) {
         super(make, model, year, milage);

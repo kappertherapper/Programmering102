@@ -1,10 +1,10 @@
 package Opgaver.fem;
 
 public class Vehicle {
-    String make;
-    String model;
-    int year;
-    double milage;
+    private String make;
+    private String model;
+    private int year;
+    private double milage;
 
     public Vehicle(String make, String model, int year, double milage) {
         this.make = make;

@@ -73,9 +73,9 @@ public class Indkøbsvogn {
             System.out.println(itemName5 +"\t\tDKK"+itemPrice5);
             System.out.println(itemName6 +"\t\tDKK"+itemPrice6);
             System.out.println("--------------------------");
-            System.out.println("Subtotal:\tDKK"+subtotal);
-            System.out.println("vat:\tDKK"+vat);
-            System.out.println("Total:\t\tDKK"+total);
+            System.out.printf("Subtotal:\tDKK%.2f \n", subtotal);
+            System.out.printf("vat:\tDKK%.2f \n", vat);
+            System.out.printf("Total:\t\tDKK%.2f \n", total);
             System.out.println("--------------------------");
     }
 }
