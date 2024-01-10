@@ -1,7 +1,6 @@
 package Eks23v;
 
-//public class SnakkesagligPerson extends Thread 
-public class SnakkesagligPerson implements Runnable {
+public class SnakkesagligPerson extends Thread {
     private String navn;
     private int ventetid;
 
@@ -20,6 +19,4 @@ public class SnakkesagligPerson implements Runnable {
             } // vent lidt
         }
     }
-
-
 }

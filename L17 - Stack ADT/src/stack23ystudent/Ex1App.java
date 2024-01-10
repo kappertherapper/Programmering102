@@ -8,7 +8,7 @@ public class Ex1App {
     public static void main(String[] args) {
         //       Stack23Y<String> stack = new ArrayStack23Y<>();
         Stack23Y<String> stack = new LinkedStack23Y<>();
-//        Stack23Y<String> stack = new DequeStack23Y<>();
+        //        Stack23Y<String> stack = new DequeStack23Y<>();
 
         stack.push("Tom");
         stack.push("Diana");

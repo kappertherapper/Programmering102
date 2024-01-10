@@ -5,11 +5,7 @@ import java.util.List;
 
 public class NewsAgency implements Subject {
     private String news;
-    private List<Observer> observers = new ArrayList<>();
-
-    public NewsAgency() {
-        this.observers = observers;
-    }
+    private final List<Observer> observers = new ArrayList<>();
 
     @Override
     public void registrerObserver(Observer o) {

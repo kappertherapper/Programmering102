@@ -30,8 +30,7 @@ public class Lambda {
         List<Person> persons = new ArrayList<>(List.of(
                 new Person("Bob", 24),
                 new Person("Jolle", 5),
-                new Person("Gulle", 69))
-        );
+                new Person("Gulle", 69)));
 
         // Sorted after age
         persons.sort((Person p1, Person p2) -> p1.age - p2.age);
