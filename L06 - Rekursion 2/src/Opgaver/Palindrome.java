@@ -7,6 +7,7 @@ public class Palindrome {
         System.out.println("Is kayak a palindrome word?: " + isPalindrome(kayak));
         System.out.println("Is padal a palindome word?: " + isPalindrome(padel));
     }
+
     public static boolean isPalindrome(String s) {
         // Base case: If the string length is 0 or 1, it's a palindrome
         if (s.length() <= 1) {
@@ -24,7 +25,6 @@ public class Palindrome {
         else {
             String substring = s.substring(1, s.length() - 1);
             return isPalindrome(substring);
-
         }
     }
 }

@@ -18,7 +18,7 @@ public class Demo {
         System.out.println("Sorted on age (comparable): " + persons);
 
 
-        Comparator nameComparator = new Person.NameComparator();
+        Comparator nameComparator = new Animal.AnimalComparator();
         Collections.sort(persons, nameComparator);
         System.out.println("Sorted by name (comparator)" + persons);
     }

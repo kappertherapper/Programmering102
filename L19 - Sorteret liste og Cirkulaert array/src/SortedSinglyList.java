@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SortedSinglyList<E extends Comparable<E>> implements SortedList23Y<E> {
 
     private Node<E> head = null;
@@ -120,6 +122,43 @@ public class SortedSinglyList<E extends Comparable<E>> implements SortedList23Y<
             this.add(node.element);
             node = node.next;
         }
+    }
+
+    public E get(int index) {
+        if (index < 0 || index >= size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node<E> node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+
+        return node.element;
+    }
+
+    public SortedSinglyList<E> mergeTwoLists(SortedSinglyList<E> list1, SortedSinglyList<E> list2) {
+        if (list1 == null) {
+            return list2;
+        }
+        SortedSinglyList<E> sorted = new SortedSinglyList<>();
+        int count1 = 0;
+        int count2 = 0;
+        boolean result = isLessThanOrEqualTo(list1.get(count1), list2.get(count2));
+
+        while (count1 < list1.size() && count2 < list2.size()) {
+            if (result) {
+                sorted.add(list1.get(count1));
+                count1++;
+            } else {
+                sorted.add(list2.get(count2));
+                count2++;
+            }
+        }
+        return sorted;
+    }
+
+    public static <E extends Comparable<E>> boolean isLessThanOrEqualTo(E element1, E element2) {
+        return element1.compareTo(element2) <= 0;
     }
 
     @Override
